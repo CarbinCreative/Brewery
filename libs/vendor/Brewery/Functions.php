@@ -111,7 +111,7 @@ function environment($environmentResource, $returnPath = false) {
 	}
 
 	$unresolvedPath = implode('/', [
-		'/app/Environment/',
+		'/app/environment/',
 		ucfirst(strtolower(BREWERY_ENVIRONMENT)),
 		"/{$environmentResource}"
 	]);
@@ -138,17 +138,36 @@ function environment($environmentResource, $returnPath = false) {
  *	Returns clean assets path, either public or private assets path.
  *
  *	@param string $asset Asset to load.
- *	@param bool $isPublic If set to false, private assets are loaded, otherwise public.
  *
  *	@return string
  */
-function asset($asset, $isPublic = true) {
+function asset($asset) {
 
-	$visibility = ($isPublic === true) ? 'public' : 'private';
+	$patternImageAsset = '/(\.(jpe?g|png|gif|svgz?)$)/';
 
-	$assetPath = path("/{$visibility}/assets/{$asset}");
+	$patternStylesheetAsset = '/(\.((c|sc|le)ss)$)/';
 
-	return "/{$assetPath}";
+	$patternScriptAsset = '/(\.(js|coffee))$)/';
+
+	if(preg_match($patternImageAsset, $asset) !== false) {
+
+		$assetPath = path("public/assets/img/" . $asset);
+
+	} else if(preg_match($patternStylesheetAsset, $asset) !== false) {
+
+		$assetPath = path("public/assets/css/" . $asset);
+
+	} else if(preg_match($patternScriptAsset, $asset) !== false) {
+
+		$assetPath = path("public/assets/js/" . $asset);
+
+	} else {
+
+		$assetPath = path("public/assets" , $asset);
+
+	}
+
+	return $assetPath;
 
 }
 
