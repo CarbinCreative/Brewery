@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<brewery:config xmlns:brewery="http://brewphp.org/xmlns">
+
+	<!-- Framework Constants -->
+	<brewery:constants>
+
+		<!-- Environment, MUST be either of; DEVELOPMENT, INTEGRATION or PRODUCTION. -->
+		<brewery:constant name="environment">DEVELOPMENT</brewery:constant>
+
+		<!-- Debug, these do not apply in production environment -->
+		<brewery:constant name="debug_mode" type="bool">true</brewery:constant>
+		<brewery:constant name="debug_log" type="bool">true</brewery:constant>
+
+		<!-- General Settings -->
+		<brewery:constant name="date_timezone">Europe/Stockholm</brewery:constant>
+
+		<!-- Cookie and Session Settings -->
+		<brewery:constant name="session_enabled" type="bool">false</brewery:constant>
+		<brewery:constant name="cookies_enabled" type="bool">false</brewery:constant>
+
+		<!-- Library Paths -->
+		<brewery:constant name="library_path" type="path">/libs/vendor/</brewery:constant>
+		<brewery:constant name="framework_path" type="path">/libs/vendor/Brewery/</brewery:constant>
+
+		<!-- Public Paths -->
+		<brewery:constant name="public_path" type="path">/public/</brewery:constant>
+		<brewery:constant name="assets_path" type="path">/public/assets/</brewery:constant>
+		<brewery:constant name="uploads_path" type="path">/public/uploads/</brewery:constant>
+
+		<!-- Private Paths -->
+		<brewery:constant name="private_path" type="path">/private/</brewery:constant>
+		<brewery:constant name="logs_path" type="path">/private/logs/</brewery:constant>
+		<brewery:constant name="cache_path" type="path">/private/cache/</brewery:constant>
+
+		<!-- Application Settings -->
+		<brewery:constant name="application_namespace">app</brewery:constant>
+		<brewery:constant name="application_path_name">/app/</brewery:constant>
+
+		<!-- Application Paths -->
+		<brewery:constant name="commands_path" type="path">/app/commands/</brewery:constant>
+		<brewery:constant name="components_path" type="path">/app/components/</brewery:constant>
+		<brewery:constant name="constraints_path" type="path">/app/constraints/</brewery:constant>
+		<brewery:constant name="environments_path" type="path">/app/environments/</brewery:constant>
+
+		<brewery:constant name="controllers_path" type="path">/app/controllers/</brewery:constant>
+		<brewery:constant name="models_path" type="path">/app/models/</brewery:constant>
+		<brewery:constant name="views_path" type="path">/app/views/</brewery:constant>
+		<brewery:constant name="layouts_path" type="path">/app/views/layouts/</brewery:constant>
+		<brewery:constant name="blueprints_path" type="path">/app/views/blueprints/</brewery:constant>
+
+		<brewery:constant name="locale_path" type="path">/app/i18n/</brewery:constant>
+
+	</brewery:constants>
+
+</brewery:config>

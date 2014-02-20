@@ -1,0 +1,41 @@
+{
+
+	"/": "ApplicationController",
+
+	"foo": "ApplicationController",
+
+	"user": {
+
+		"/": "AccountController",
+
+		":uri": "AccountController::getPerson",
+
+		":uri/friends": "FriendController::getFriendsOf"
+
+	},
+
+	"admin": {
+
+		"component": "AdminComponent",
+
+		"constraints": [
+			"AdminConstraint"
+		],
+
+		"/": "DashboardController",
+
+		"dashboard": "DashboardController",
+
+		"account": "AccountController",
+
+		"account/:uri": {
+			"path": "AccountController::getAccountBySlug",
+			"constraints": [
+				"FooConstraint",
+				"/BarConstraint"
+			]
+		}
+
+	}
+
+}
