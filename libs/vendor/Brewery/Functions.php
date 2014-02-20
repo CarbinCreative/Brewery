@@ -149,21 +149,27 @@ function asset($asset) {
 
 	$patternScriptAsset = '/(\.(js|coffee))$)/';
 
-	if(preg_match($patternImageAsset, $asset) !== false) {
+	if(preg_match($patternImageAsset, $asset) === 1) {
 
 		$assetPath = path("public/assets/img/" . $asset);
 
-	} else if(preg_match($patternStylesheetAsset, $asset) !== false) {
+	} else if(preg_match($patternStylesheetAsset, $asset) === 1) {
 
 		$assetPath = path("public/assets/css/" . $asset);
 
-	} else if(preg_match($patternScriptAsset, $asset) !== false) {
+	} else if(preg_match($patternScriptAsset, $asset) === 1) {
 
 		$assetPath = path("public/assets/js/" . $asset);
 
 	} else {
 
 		$assetPath = path("public/assets" , $asset);
+
+	}
+
+	if(BREWERY_ENVIRONMENT === 'DEVELOPMENT') {
+
+		$assetPath .= '?' . mt_rand();
 
 	}
 

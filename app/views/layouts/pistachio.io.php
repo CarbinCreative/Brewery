@@ -14,6 +14,8 @@
 
 	<title>{{ $user }}</title>
 
+	<style src="{{ asset('style.css') }}" type="text/css"></style>
+
 </head><body id="top" class="no-javascript">
 <div id="wrapper">
 
