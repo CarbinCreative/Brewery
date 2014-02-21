@@ -446,7 +446,7 @@ class Router {
 
 		if(strpos($action, '.') !== false) {
 
-			$action = trim(str_replace(['get', 'post', 'put', 'delete'], '', $_action), '.');
+			$action = trim(str_replace(['get', 'post', 'put', 'delete'], '', $action), '.');
 
 		}
 

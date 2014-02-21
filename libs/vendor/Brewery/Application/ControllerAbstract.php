@@ -119,6 +119,20 @@ abstract class ControllerAbstract extends ResourceAbstract implements Controller
 
 		}
 
+		$classNames = [
+			'brewery',
+			$brewery->currentRoute->resource,
+			$brewery->currentRoute->action,
+			$action,
+			'y' . date('Y'),
+			'm' . date('m'),
+			'd' . date('d')
+		];
+
+		$classNames = array_unique($classNames);
+
+		$variables['bodyClassNames'] = implode(' ', $classNames);
+
 		return $this->view->render($action, $variables);
 
 	}

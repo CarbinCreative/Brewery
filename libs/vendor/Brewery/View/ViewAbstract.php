@@ -313,6 +313,12 @@ abstract class ViewAbstract {
 
 			$includePath = BREWERY_LAYOUTS_PATH;
 
+			if(defined('BREWERY_COMPONENT_PATH') === true) {
+
+				$includePath = BREWERY_COMPONENT_PATH . implode(DIRECTORY_SEPARATOR, ['views', 'layouts']) . DIRECTORY_SEPARATOR;
+
+			}
+
 			$this->hasRenderedLayout = true;
 
 		}
