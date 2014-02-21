@@ -8,7 +8,7 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Route */
@@ -20,7 +20,7 @@ if(!defined('BREWERY_ROOT_PATH')) exit;
 
 
 /**
- *	Callback
+ *	CallbackTrait
  *
  *	Route callback trait, used to create route action and route controller callbacks.
  *
@@ -31,7 +31,7 @@ if(!defined('BREWERY_ROOT_PATH')) exit;
  *
  *	@author Robin Grass <hej@carbin.se>
  */
-trait Callback {
+trait CallbackTrait {
 
 	/**
 	 *	@var string $regexInflections Inflections for callbacks.
@@ -297,6 +297,8 @@ trait Callback {
 	 *
 	 *	Imports callback resource if it exists.
 	 *
+	 *	@throws \Brewery\Routing\Route\Exceptions\CallbackException
+	 *
 	 *	@return void
 	 */
 	public function import() {
@@ -326,6 +328,8 @@ trait Callback {
 	 *	invoke
 	 *
 	 *	Invokes callback.
+	 *
+	 *	@throws \Brewery\Routing\Route\CallbackException
 	 *
 	 *	@return mixed
 	 */

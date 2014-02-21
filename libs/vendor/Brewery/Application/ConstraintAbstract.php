@@ -8,7 +8,7 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Application */
@@ -22,7 +22,7 @@ if(!defined('BREWERY_ROOT_PATH')) exit;
 /**
  *	ConstraintAbstract
  *
- *	Route callback constraint, implemented class MUST contain logic used to allow, or disallow specified route calls.
+ *	Route controller callback constraint.
  *
  *	@vendor Brewery
  *	@package Application
@@ -36,7 +36,7 @@ abstract class ConstraintAbstract {
 	/**
 	 *	validate
 	 *
-	 *	Implemented method MUST contain logic  contain logic used to allow, or disallow specified route call. MUST return boolan.
+	 *	Implemented method <strong>MUST</strong> contain logit to allow, or disallow specific route calls.
 	 *
 	 *	@return bool
 	 */

@@ -8,7 +8,7 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Factory */
@@ -96,7 +96,7 @@ abstract class FactoryAbstract {
 	/**
 	 *	Setter
 	 *
-	 *	Calls method {@see set}.
+	 *	Calls method {@see \Brewery\Core\Factory\FactoryAbstract::set}.
 	 *
 	 *	@param string $key Identifier to factory store item.
 	 *	@param mixed $object Mixed object to store in factory store.
@@ -147,7 +147,7 @@ abstract class FactoryAbstract {
 	/**
 	 *	Getter
 	 *
-	 *	Calls method {@see get}.
+	 *	Calls method {@see \Brewery\Core\Factory\FactoryAbstract::get}.
 	 *
 	 *	@param string $key Identifier to factory store item.
 	 *

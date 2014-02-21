@@ -8,13 +8,13 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Application */
 namespace Brewery\Application;
 
-/* @aliases */
+/* @imports */
 use Brewery\Http\ResourceAbstract;
 
 /* Deny direct file access */
@@ -25,7 +25,7 @@ if(!defined('BREWERY_ROOT_PATH')) exit;
 /**
  *	ControllerAbstract
  *
- *	Abstract used to create application controllers.
+ *	Abstract used to create route controllers.
  *
  *	@vendor Brewery
  *	@package Application
@@ -44,7 +44,7 @@ abstract class ControllerAbstract extends ResourceAbstract implements Controller
 	/**
 	 *	Constructor
 	 *
-	 *	Ivokes parent constructor.
+	 *	Invokes {@see ResourceAbstract::__construct} and sets up default view object.
 	 *
 	 *	@return void
 	 */
@@ -61,7 +61,7 @@ abstract class ControllerAbstract extends ResourceAbstract implements Controller
 	/**
 	 *	makeView
 	 *
-	 *	Creates controller view.
+	 *	Creates controller view, if not context is set Pistacio ({@see \Brewery\View\Adapters\PistachioAdapter}) is used..
 	 *
 	 *	@param string $viewContext
 	 *
@@ -102,7 +102,7 @@ abstract class ControllerAbstract extends ResourceAbstract implements Controller
 	/**
 	 *	render
 	 *
-	 *	Renders view.
+	 *	Function used to render view from registered view adapter.
 	 *
 	 *	@param array $variables
 	 *

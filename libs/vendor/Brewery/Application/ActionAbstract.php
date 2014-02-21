@@ -8,7 +8,7 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Application */
@@ -22,7 +22,7 @@ if(!defined('BREWERY_ROOT_PATH')) exit;
 /**
  *	ActionAbstract
  *
- *	Abstract used to create application actions.
+ *	Abstract class for route controller actions.
  *
  *	@vendor Brewery
  *	@package Application

@@ -8,7 +8,7 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Exceptions */
@@ -43,6 +43,7 @@ class ErrorException extends ExceptionAbstract {
 	public function getCodeAsString() {
 
 		switch($this->getCode()) {
+
 			case @E_RECOVERABLE_ERROR :
 
 				return 'CATCHABLE';
@@ -71,6 +72,7 @@ class ErrorException extends ExceptionAbstract {
 				return 'UNKNOWN';
 
 			break;
+
 		}
 
 	}

@@ -8,13 +8,13 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Http */
 namespace Brewery\Http;
 
-/* @aliases */
+/* @imports */
 use Brewery\Application\Response as ResponseInterface;
 
 /* Deny direct file access */

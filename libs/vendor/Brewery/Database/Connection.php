@@ -8,7 +8,7 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Database */
@@ -22,7 +22,7 @@ if(!defined('BREWERY_ROOT_PATH')) exit;
 /**
  *	Connection
  *
- *	Database connection class, extends {@man PDO}. Makes database connections with PDO easier to understand and manage.
+ *	Database connection class, extends <a href="http://php.net/manual/en/class.pdo.php">PDOStatement</a>. Makes database connections with PDO easier to understand and manage.
  *
  *	@vendor Brewery
  *	@package Database
@@ -166,7 +166,7 @@ class Connection extends \PDO {
 	 *
 	 *	@param array $driverOptions Array containing key value pairs of driver specific options.
 	 *
-	 *	@throws Exceptions\DatabaseException
+	 *	@throws \Brewery\Database\Exceptions\DatabaseException
 	 *
 	 *	@return void
 	 */

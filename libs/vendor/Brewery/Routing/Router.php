@@ -8,7 +8,7 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Routing */
@@ -201,6 +201,8 @@ class Router {
 	 *
 	 *	@param string $callbackPath
 	 *
+	 *	@throws \Brewery\Routing\Exceptions\RouterException
+	 *
 	 *	@return array|bool
 	 */
 	private function parseDefinedCallbackRoute($callbackPath) {
@@ -268,7 +270,7 @@ class Router {
 	 *
 	 *	@param bool $isComponentRule
 	 *
-	 *	@return array
+	 *	@return object
 	 */
 	private function autoDetectRequest($isComponentRule = false) {
 
@@ -417,6 +419,8 @@ class Router {
 	 *
 	 *	Set curret route object.
 	 *
+	 *	@param \Brewery\Routing\Route $route
+	 *
 	 *	@return void
 	 */
 	protected function setCurrentRouteObject(Route $route) {
@@ -455,6 +459,8 @@ class Router {
 	 *	delegate
 	 *
 	 *	Sets up current matched route and invokes required resources.
+	 *
+	 *	@throws \Brewery\Routing\Exceptions\RouterException
 	 *
 	 *	@return string
 	 */

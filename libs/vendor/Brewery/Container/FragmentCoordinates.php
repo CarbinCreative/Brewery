@@ -8,7 +8,7 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Container */
@@ -22,7 +22,7 @@ if(!defined('BREWERY_ROOT_PATH')) exit;
 /**
  *	FragmentCoordinates
  *
- *	Container data fragment abstract.
+ *	Collection fragment coordinates object.
  *
  *	@vendor Brewery
  *	@package Container
@@ -96,7 +96,7 @@ class FragmentCoordinates {
 	/**
 	 *	getLength
 	 *
-	 *	Gets collection length.
+	 *	Returns collection length.
 	 *
 	 *	@return int
 	 */

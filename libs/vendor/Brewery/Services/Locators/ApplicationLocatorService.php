@@ -8,11 +8,15 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Locators */
 namespace Brewery\Services\Locators;
+
+/* @imports */
+use Brewery\Services\LocatorServiceAbstract;
+use Brewery\Services\Exceptions\AutoloaderServiceException;
 
 /* Deny direct file access */
 if(!defined('BREWERY_ROOT_PATH')) exit;
@@ -31,7 +35,7 @@ if(!defined('BREWERY_ROOT_PATH')) exit;
  *
  *	@author Robin Grass <hej@carbin.se>
  */
-class ApplicationLocatorService extends \Brewery\Services\LocatorServiceAbstract {
+class ApplicationLocatorService extends LocatorServiceAbstract {
 
 	/**
 	 *	@const string REGEX_APPLICATION_RESOURCES Application regex resources.
@@ -76,6 +80,8 @@ class ApplicationLocatorService extends \Brewery\Services\LocatorServiceAbstract
 	 *
 	 *	@param string $classPath Class name to import.
 	 *
+	 *	@throws \Brewery\Services\Exceptions\AutoloaderServiceException
+	 *
 	 *	@return void
 	 */
 	public function import($classPath) {
@@ -84,9 +90,9 @@ class ApplicationLocatorService extends \Brewery\Services\LocatorServiceAbstract
 
 		if(file_exists($includePath) === false) {
 
-			throw new \Brewery\Services\Exceptions\AutoloaderServiceException(
+			throw new AutoloaderServiceException(
 				"Could not include file.", "File '{$includePath}' does not exist.",
-				\Brewery\Services\Exceptions\AutoloaderServiceException::UNEXPECTED_RESULT, __METHOD__
+				AutoloaderServiceException::UNEXPECTED_RESULT, __METHOD__
 			);
 
 		}

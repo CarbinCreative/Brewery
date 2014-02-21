@@ -8,7 +8,7 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Uri */
@@ -33,7 +33,7 @@ if(!defined('BREWERY_ROOT_PATH')) exit;
  */
 class Object {
 
-	/* @inherit \Brewery\Uri\ParserTrait */
+	/* @coalesce */
 	use ParserTrait;
 
 	/**
@@ -239,7 +239,7 @@ class Object {
 	 *
 	 *	@param string $scheme URI scheme.
 	 *
-	 *	@retun void
+	 *	@return void
 	 */
 	public function setScheme($scheme) {
 
@@ -261,7 +261,7 @@ class Object {
 	 *
 	 *	Returns URI object scheme.
 	 *
-	 *	@retun string
+	 *	@return string
 	 */
 	public function getScheme() {
 
@@ -278,7 +278,7 @@ class Object {
 	 *
 	 *	@throws \Brewery\URI\Exceptions\UriException
 	 *
-	 *	@retun void
+	 *	@return void
 	 */
 	public function setHost($host) {
 
@@ -300,7 +300,7 @@ class Object {
 	 *
 	 *	Returns URI object host.
 	 *
-	 *	@retun string
+	 *	@return string
 	 */
 	public function getHost() {
 
@@ -315,7 +315,7 @@ class Object {
 	 *
 	 *	@param integer $port URI host port.
 	 *
-	 *	@retun void
+	 *	@return void
 	 */
 	public function setPort($port = null) {
 
@@ -328,7 +328,7 @@ class Object {
 	 *
 	 *	Returns URI object port.
 	 *
-	 *	@retun integer
+	 *	@return integer
 	 */
 	public function getPort() {
 
@@ -345,7 +345,7 @@ class Object {
 	 *
 	 *	@throws \Brewery\URI\Exceptions\UriException
 	 *
-	 *	@retun void
+	 *	@return void
 	 */
 	public function setRequestPath($requestPath = null) {
 
@@ -375,7 +375,7 @@ class Object {
 	 *
 	 *	Returns URI object request path.
 	 *
-	 *	@retun string
+	 *	@return string
 	 */
 	public function getRequestPath() {
 
@@ -396,7 +396,7 @@ class Object {
 	 *
 	 *	@param string $rawRequestPath URI request path, not to be mistaken for script path, {@see \Brewery\URI\Object::$scriptFilePath}.
 	 *
-	 *	@retun void
+	 *	@return void
 	 */
 	public function setRawRequestPath($rawRequestPath = null) {
 
@@ -415,7 +415,7 @@ class Object {
 	 *
 	 *	Returns raw URI object request path.
 	 *
-	 *	@retun string
+	 *	@return string
 	 */
 	public function getRawRequestPath() {
 
@@ -432,7 +432,7 @@ class Object {
 	 *
 	 *	@throws \Brewery\URI\Exceptions\UriException
 	 *
-	 *	@retun void
+	 *	@return void
 	 */
 	public function setQueryString($queryString = null) {
 
@@ -460,7 +460,7 @@ class Object {
 	 *
 	 *	Returns URI object query string.
 	 *
-	 *	@retun string
+	 *	@return string
 	 */
 	public function getQueryString() {
 
@@ -475,7 +475,7 @@ class Object {
 	 *
 	 *	@param string $fragment URI Fragment link.
 	 *
-	 *	@retun void
+	 *	@return void
 	 */
 	public function setFragment($fragment = null) {
 
@@ -488,7 +488,7 @@ class Object {
 	 *
 	 *	Returns URI object fragment.
 	 *
-	 *	@retun string
+	 *	@return string
 	 */
 	public function getFragment() {
 
@@ -503,7 +503,7 @@ class Object {
 	 *
 	 *	@param string $fragment
 	 *
-	 *	@retun void
+	 *	@return void
 	 */
 	public function setCredentials($username, $password) {
 
@@ -519,7 +519,7 @@ class Object {
 	 *
 	 *	Returns URI object fragment.
 	 *
-	 *	@retun string
+	 *	@return string
 	 */
 	public function getCredentials() {
 
@@ -545,7 +545,7 @@ class Object {
 	 *
 	 *	@param string $scriptFilePath Script file path.
 	 *
-	 *	@retun void
+	 *	@return void
 	 */
 	public function setScriptPath($scriptFilePath = null) {
 
@@ -558,7 +558,7 @@ class Object {
 	 *
 	 *	Returns URI object script file path.
 	 *
-	 *	@retun string
+	 *	@return string
 	 */
 	public function getScriptPath() {
 
@@ -573,7 +573,7 @@ class Object {
 	 *
 	 *	@param string $scriptFileName Script file name.
 	 *
-	 *	@retun void
+	 *	@return void
 	 */
 	public function setScriptName($scriptFileName = null) {
 
@@ -586,7 +586,7 @@ class Object {
 	 *
 	 *	Returns URI object script file name.
 	 *
-	 *	@retun string
+	 *	@return string
 	 */
 	public function getScriptName() {
 

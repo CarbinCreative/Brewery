@@ -8,8 +8,11 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
+
+/* @imports */
+use \Brewery\Core\Factory\Factory;
 
 /* Deny direct file access */
 if(!defined('BREWERY_ROOT_PATH')) exit;
@@ -30,7 +33,7 @@ if(!defined('BREWERY_ROOT_PATH')) exit;
  */
 class Brewery {
 
-	/* @coalesce \Brewery\Generics\SingletonTrait */
+	/* @coalesce */
 	use \Brewery\Generics\SingletonTrait;
 
 	/**
@@ -48,7 +51,7 @@ class Brewery {
 	private function __construct() {
 
 		// Create a new instance of Factory
-		$this->factory = new \Brewery\Core\Factory\Factory();
+		$this->factory = new Factory();
 
 	}
 

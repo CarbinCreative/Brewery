@@ -8,7 +8,7 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Brewery */
@@ -112,7 +112,7 @@ function environment($environmentResource, $returnPath = false) {
 
 	$unresolvedPath = implode('/', [
 		'/app/environment/',
-		ucfirst(strtolower(BREWERY_ENVIRONMENT)),
+		strtolower(BREWERY_ENVIRONMENT),
 		"/{$environmentResource}"
 	]);
 

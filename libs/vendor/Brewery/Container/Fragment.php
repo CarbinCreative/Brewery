@@ -8,7 +8,7 @@
  *
  *	@author Robin Grass <hej@carbin.se>
  *
- *	@license http://opensource.org/licenses/MIT MIT
+ *	@license http://opensource.org/licenses/LGPL-2.1 The GNU Lesser General Public License, version 2.1
  */
 
 /* @namespace Container */
@@ -90,7 +90,7 @@ abstract class Fragment {
 	/**
 	 *	extract
 	 *
-	 *	Should contain logic to extract a segment of data form registered {@see \Brewery\Container\Fragment::$collection} object based on the properties of registered {@see \Brewery\Container\Fragment::$coordinates} object, may return a new {@see \Brewery\Container\Collection} object.
+	 *	Implemented should contain logic to extract a segment of data form registered {@see \Brewery\Container\Fragment::$collection} object based on the properties of registered {@see \Brewery\Container\Fragment::$coordinates} object, may return a new {@see \Brewery\Container\Collection} object.
 	 *
 	 *	@return mixed
 	 */
