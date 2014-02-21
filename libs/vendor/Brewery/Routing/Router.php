@@ -168,7 +168,7 @@ class Router {
 
 				$parsedRouteMaps[$routePath] = $this->parseDefinedCallbackRoute($route);
 
-			} else if(is_array($route) === true) {
+			} else if(is_array($constraints) === true) {
 
 				$parsedRouteMaps[$routePath] = $this->parseDefinedCallbackRoute($route['path']);
 
@@ -427,26 +427,35 @@ class Router {
 
 		$brewery = \Brewery::getInstance();
 
-		$_controller = $route->controller()->getName();
-		$_callback = $route->controller()->getCallback();
+		$controller = $route->controller()->getName();
+		$callback = $route->controller()->getCallback();
 
-		$_resource = strtolower(str_ireplace('Controller', '', $_controller));
-		$_action = strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1.', $_callback));
+		$resource = strtolower(str_ireplace('Controller', '', $controller));
+		$action = strtolower(preg_replace('/([a-zA-Z])(?=[A-Z])/', '$1.', $callback));
 
-		$_includePath = implode(DIRECTORY_SEPARATOR, [rtrim(BREWERY_VIEWS_PATH, DIRECTORY_SEPARATOR), $_resource]) . DIRECTORY_SEPARATOR;
 
-		if(strpos($_action, '.') !== false) {
+		$includePath = BREWERY_VIEWS_PATH;
 
-			$_action = trim(str_replace(['get', 'post', 'put', 'delete'], '', $_action), '.');
+		if(defined('BREWERY_COMPONENT_PATH') === true) {
+
+			$includePath = BREWERY_COMPONENT_PATH . 'views';
+
+		}
+
+		$includePath = implode(DIRECTORY_SEPARATOR, [rtrim($includePath, DIRECTORY_SEPARATOR), $resource]) . DIRECTORY_SEPARATOR;
+
+		if(strpos($action, '.') !== false) {
+
+			$action = trim(str_replace(['get', 'post', 'put', 'delete'], '', $_action), '.');
 
 		}
 
 		$currentRoute = (object) [
-			'includePath' => $_includePath,
-			'controller' => $_controller,
-			'callback' => $_callback,
-			'resource' => $_resource,
-			'action' => $_action
+			'includePath' => $includePath,
+			'controller' => $controller,
+			'callback' => $callback,
+			'resource' => $resource,
+			'action' => $action
 		];
 
 		$brewery->currentRequest = $route;

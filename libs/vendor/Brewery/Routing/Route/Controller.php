@@ -34,6 +34,6 @@ if(!defined('BREWERY_ROOT_PATH')) exit;
 class Controller {
 
 	/* @coalesce */
-	use Callback;
+	use CallbackTrait;
 
 }

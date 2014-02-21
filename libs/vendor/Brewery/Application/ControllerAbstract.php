@@ -105,14 +105,21 @@ abstract class ControllerAbstract extends ResourceAbstract implements Controller
 	 *	Function used to render view from registered view adapter.
 	 *
 	 *	@param array $variables
+	 *	@param string $action
 	 *
 	 *	@return string
 	 */
-	public function render(Array $variables = []) {
+	public function render(Array $variables = [], $action = null) {
 
 		$brewery = \Brewery::getInstance();
 
-		return $this->view->render($brewery->currentRoute->action, $variables);
+		if($action === null) {
+
+			$action = $brewery->currentRoute->action;
+
+		}
+
+		return $this->view->render($action, $variables);
 
 	}
 

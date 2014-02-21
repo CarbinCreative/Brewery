@@ -14,6 +14,19 @@
 
 
 /**
+ *	brewery
+ *
+ *	Returns Brewery factory instance.
+ *
+ *	@return string
+ */
+function brewery() {
+
+	return \Brewery::getInstance();
+
+}
+
+/**
  *	url
  *
  *	Global alias function for {{@see \Brewery\asset}}.
